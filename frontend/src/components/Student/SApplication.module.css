@@ -1,0 +1,29 @@
+.applicationContainer {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .applicationTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .applicationTable th, 
+  .applicationTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .applicationTable th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .selectedStatus {
+    font-weight: bold;
+    color: green;
+  }
+  

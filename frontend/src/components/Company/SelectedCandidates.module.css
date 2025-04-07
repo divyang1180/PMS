@@ -1,0 +1,94 @@
+/* 🌟 Container Styling */
+.selectedCandidatesContainer {
+  max-width: 90%;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* 🔥 Heading */
+.selectedCandidatesTitle {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 📋 Table Styling */
+.selectedCandidatesTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 🏷️ Table Headers */
+.selectedCandidatesTable th {
+  background-color: #2f4965;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* 🔹 Table Rows */
+.selectedCandidatesTable tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* 📝 Table Cells */
+.selectedCandidatesTable td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 🔗 Resume Link */
+.selectedCandidatesTable td a {
+  text-decoration: none;
+  color: #2f4965;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.selectedCandidatesTable td a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* 📱 Responsive Table */
+@media (max-width: 768px) {
+  .selectedCandidatesTable {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .selectedCandidatesTable th, 
+  .selectedCandidatesTable td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+.spinner {
+  margin: 20px auto;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

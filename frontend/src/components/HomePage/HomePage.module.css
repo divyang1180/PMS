@@ -1,0 +1,145 @@
+/* HomePage.module.css */
+
+/* Remove global selectors like * and html, body */
+
+.backgroundHomepage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("background-image.jpg") no-repeat center center/cover;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.backgroundHomepage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.collegeLogo {
+  width: 160px;
+  position: absolute;
+  top: 15px;
+}
+
+.leftCorner {
+  left: 40px;
+}
+
+.rightCorner {
+  right: 40px;
+}
+
+.homepage {
+  position: relative;
+  width: 90%;
+  max-width: 850px;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 123, 255, 0.4);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.mainContent {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.mainContent h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.loginCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+}
+
+.loginButton {
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: #fff;
+  padding: 12px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 5px 12px rgba(0, 123, 255, 0.4);
+}
+
+.loginButton:hover {
+  background: linear-gradient(135deg, #0056b3, #0095ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+}
+
+.loginButton:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .mainContent h2 {
+    font-size: 1.5rem;
+  }
+
+  .avatar {
+    width: 110px;
+    height: 110px;
+  }
+
+  .loginButton {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+
+  .collegeLogo {
+    width: 120px;
+  }
+}

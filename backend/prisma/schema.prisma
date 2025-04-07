@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+}
+
+model Student {
+  id          String          @id @default(uuid())
+  name        String
+  email       String          @unique
+  password    String
+  profile     StudentProfile? @relation("StudentToProfile")
+  appliedJobs AppliedJob[]
+  selected    Selected[] // ✅ Add inverse relation to Selected
+}
+
+model StudentProfile {
+  id                   String   @id @default(uuid())
+  studentName          String
+  enrollmentNo         String   @unique
+  gender               String
+  branch               String
+  birthdate            DateTime
+  age                  Int
+  passingYearSSC       Int
+  percentageSSC        Float
+  passingYearHSC       String
+  percentageHSC        String
+  passingYearD2D       String?
+  percentageD2D        String?
+  studyGap             Int?
+  mediumSchool         String
+  spiSem1              Float?
+  spiSem2              Float?
+  spiSem3              Float?
+  spiSem4              Float?
+  spiSem5              Float?
+  currentCGPA          Float
+  percentageBE         Float
+  totalBacklogs        Int?
+  backlogTitles        String?
+  currentBacklogs      Int?
+  currentBacklogTitles String?
+  mobileNumber         String
+  email                String   @unique
+  address              String
+  city                 String
+  pincode              String
+  district             String
+  filePath             String?
+  studentId            String   @unique // 🔥 Change from Int to String
+  student              Student  @relation("StudentToProfile", fields: [studentId], references: [id])
+}
+
+model Company {
+  id       String     @id @default(uuid())
+  name     String
+  email    String     @unique
+  phone     String   // ✅ Add this
+  website   String   // ✅ Add this
+  password String
+  jobs     Job[]
+  selected Selected[] // ✅ Add inverse relation to Selected
+}
+
+model Job {
+  id          String       @id @default(uuid())
+  designation String
+  description String?      @db.Text // ✅ Use `Text` for longer descriptions
+  experience  Int?
+  percentage  Float?
+  gpa         Float?
+  seats       Int
+  salary      String?
+  companyId   String
+  company     Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  createdAt   DateTime     @default(now())
+  appliedJobs AppliedJob[] // 👈 Relation field for AppliedJob
+}
+
+model AppliedJob {
+  id         String  @id @default(uuid())
+  studentId  String // 🔥 Change from Int to String
+  jobId      String
+  isSelected Boolean @default(false) // ✅ New field to track selected studentt
+
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  job       Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Selected {
+  id        String   @id @default(uuid())
+  studentId String
+  companyId String
+  student   Student  @relation(fields: [studentId], references: [id])
+  company   Company  @relation(fields: [companyId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Otp {
+  id        Int      @id @default(autoincrement())
+  email     String
+  otp       String
+  createdAt DateTime @default(now())
+}

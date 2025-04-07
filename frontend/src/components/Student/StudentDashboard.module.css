@@ -1,0 +1,373 @@
+/* Main Container */
+.studentDashboardContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px 20px;
+}
+
+.portalTitle {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+.welcomeText {
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.studentInfo {
+  display: flex;
+  align-items: center;
+}
+
+.studentLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.studentName {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Layout - Sidebar & Content */
+.contentArea {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sideContainer {
+  width: 250px;
+  background-color: #34495e;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuItem {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.menuItem:hover, .active {
+  background-color: #1abc9c;
+  color: white;
+}
+
+.menuLink {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: block;
+}
+
+.logout {
+  margin-top: auto;
+  color: #e74c3c;
+}
+
+/* Main Content */
+.mainContent {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Dashboard Title */
+.studentDashboardTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Dashboard Text */
+.studentDashboardText {
+  font-size: 16px;
+  color: #2c3e50;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Contact Information */
+.contactInfo {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.contactInfo h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contactInfo p {
+  margin: 5px 0;
+}
+
+.contactInfo a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+.contactInfo a:hover {
+  text-decoration: underline;
+}
+
+/* Profile Section */
+.profileContainer {
+  display: flex;
+  align-items: flex-start;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 70%;
+}
+
+.profilePhoto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 3px solid #1abc9c;
+}
+
+.profileDetails {
+  flex: 1;
+}
+
+.profileDetails p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.profileDetails strong {
+  color: #2c3e50;
+}
+
+/* Student Registration Form */
+.formContainer {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submitButton {
+  background-color: #1abc9c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #16a085;
+}
+
+/* 🌍 Responsive Design */
+@media (max-width: 1024px) {
+  .contentArea {
+    flex-direction: column;
+  }
+
+  .sideContainer {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .menuItem {
+    margin-bottom: 0;
+  }
+
+  .profileContainer,
+  .formContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .portalTitle {
+    font-size: 18px;
+  }
+
+  .welcomeText {
+    font-size: 14px;
+  }
+
+  .sideContainer {
+    padding: 5px;
+  }
+
+  .menuItem {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .mainContent {
+    padding: 10px;
+  }
+
+  .studentDashboardTitle {
+    font-size: 20px;
+  }
+
+  .profileContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profilePhoto {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .portalTitle {
+    margin-bottom: 10px;
+  }
+
+  .sideContainer {
+    flex-wrap: wrap;
+  }
+
+  .menuItem {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .profileContainer {
+    width: 100%;
+  }
+
+  .studentDashboardTitle {
+    font-size: 18px;
+  }
+
+  .formContainer {
+    padding: 15px;
+  }
+}
+
+/* Sidebar */
+.sideContainer {
+  width: 250px; /* Keep fixed width */
+  min-width: 250px; /* Prevent shrinking */
+  background-color: #34495e;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ensure Sidebar Text Doesn't Wrap */
+.menuItem {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevent text from breaking */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show '...' if text overflows */
+}
+
+.menuItem:hover, .active {
+  background-color: #1abc9c;
+  color: white;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 1024px) {
+  .sideContainer {
+    width: 220px;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sideContainer {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .menuItem {
+    font-size: 14px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sideContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .menuItem {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+

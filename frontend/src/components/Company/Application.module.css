@@ -1,0 +1,230 @@
+/* 🌟 General Container */
+.applicationContainer {
+  max-width: 90%;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* 🔥 Title */
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* ❌ Error Message */
+.errorMessage {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 📋 Application Table */
+.applicationTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🏷️ Table Headers */
+.applicationTable th {
+  background: #2a4461;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* 🔹 Table Rows */
+.applicationTable td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 🎯 Clickable Student Name */
+.clickable {
+  cursor: pointer;
+  color: #2a4461;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.clickable:hover {
+  color: #2a4461;
+  text-decoration: underline;
+  
+}
+
+/* 🧩 Student Profile Modal */
+.studentProfile {
+  width: 60%;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* 🎭 Modal Title */
+.studentProfile h3 {
+  text-align: center;
+  color: #2a4461;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+
+}
+
+/* 📑 Profile Table */
+.profileTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* 📝 Profile Table Rows */
+.profileTable td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+  line-height: 1.5;
+  transition: background 0.3s;
+
+}
+
+/* 💡 Highlight Label Column */
+.profileTable td:first-child {
+  font-weight: bold;
+  width: 40%;
+  color: #333;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* 🏆 Highlight Values */
+.profileTable td:nth-child(2) {
+  color: #555;
+}
+
+/* 🔗 Resume Link */
+.profileTable a {
+  color: #2a4461;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  
+}
+
+.profileTable a:hover {
+  text-decoration: underline;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .applicationTable, .profileTable {
+    font-size: 14px;
+  }
+
+  .studentProfile {
+    width: 90%;
+    padding: 15px;
+    
+  }
+}
+
+/* 🌟 Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* 🧩 Modal Content */
+.modalContent {
+  width: 50%;
+  max-height: 80vh;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow-y: auto; /* ✅ Enable scrolling */
+}
+
+/* ❌ Close Button */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.closeButton:hover {
+  color: red;
+}
+
+/* 📝 Profile Table */
+.profileTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+/* 🏆 Profile Table Rows */
+.profileTable td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .modalContent {
+    width: 90%;
+  }
+}
+.spinner {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ddd;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

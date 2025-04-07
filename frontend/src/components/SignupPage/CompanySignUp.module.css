@@ -1,0 +1,147 @@
+.company-signup-page {
+  background: linear-gradient(135deg, #282853, #272048);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+
+.company-signup-container {
+  background: #0d1b2a;
+  color: #faf8fb;
+  padding: 25px;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  max-height: 85vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #1b263b;
+}
+
+.company-signup-container::-webkit-scrollbar {
+  width: 6px;
+}
+.company-signup-container::-webkit-scrollbar-track {
+  background: #1b263b;
+}
+.company-signup-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.company-signup-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.company-signup-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.company-signup-container form input {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #1b263b;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.company-signup-container form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.company-signup-container form input:focus {
+  background: #253a5a;
+}
+
+.company-signup-container form button {
+  padding: 10px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.company-signup-container form button:hover {
+  background: #e68900;
+}
+
+.back-btn {
+  background: transparent;
+  border: 2px solid #ff9800;
+  color: #ff9800;
+  margin-top: 8px;
+}
+
+.back-btn:hover {
+  background: #ff9800;
+  color: #fff;
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.login-link a {
+  color: #ffeb3b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .company-signup-container {
+    width: 90%;
+    padding: 20px;
+    max-height: 90vh;
+  }
+
+  .company-signup-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .company-signup-container form input {
+    padding: 8px;
+  }
+
+  .company-signup-container form button {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+.passwordWrapper {
+  position: relative;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ff9800;
+  font-size: 18px;
+}
