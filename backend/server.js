@@ -27,6 +27,7 @@ const prisma = new PrismaClient();
 
 
 
+
 app.use(express.json());
 app.use(cors());
 
@@ -53,6 +54,7 @@ app.use("/api/counts", countRoutes);
 app.use("/api/signup", studentSignupRoutes); 
 app.use("/api/company/signup", companySignupRoutes);
 app.use("/api/counts", companyCountRoutes);
+
 
 
 
