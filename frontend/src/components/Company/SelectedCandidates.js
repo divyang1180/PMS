@@ -16,7 +16,7 @@ const SelectedCandidates = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:5000/api/selected-candidates/${companyId}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/selected-candidates/${companyId}`,
         {
           method: "GET",
           headers: {

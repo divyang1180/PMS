@@ -21,7 +21,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     // Fetch all counts from /api/counts
-    fetch("http://localhost:5000/api/counts")
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/counts`)
       .then(res => res.json())
       .then(data => setCounts(data))
       .catch(err => console.error("Error fetching counts:", err));

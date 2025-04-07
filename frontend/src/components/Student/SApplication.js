@@ -19,7 +19,7 @@ const SApplication = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:5000/api/selected-companies/${student.id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/selected-companies/${student.id}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

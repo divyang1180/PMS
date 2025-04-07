@@ -6,7 +6,7 @@ const SelectedStudents = () => {
   const [loading, setLoading] = useState(true); // 👈 Add loading state
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/selected-students/selected")
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/selected-students/selected`)
       .then((res) => res.json())
       .then((data) => setSelectedStudents(data))
       .catch((err) =>

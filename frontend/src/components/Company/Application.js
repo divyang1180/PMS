@@ -27,7 +27,7 @@ const Application = () => {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/applications/${company.id}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/applications/${company.id}`,
         {
           method: "GET",
           headers: {
@@ -42,7 +42,7 @@ const Application = () => {
       const data = await response.json();
 
       const selectedResponse = await fetch(
-        `http://localhost:5000/api/selected-candidates/${company.id}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/selected-candidates/${company.id}`,
         {
           method: "GET",
           headers: {
@@ -75,7 +75,7 @@ const Application = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:5000/api/student1/${studentId}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/student1/${studentId}`,
         {
           method: "GET",
           headers: {
@@ -101,7 +101,7 @@ const Application = () => {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/select-student/${studentId}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/select-student/${studentId}`,
         {
           method: "POST",
           headers: {

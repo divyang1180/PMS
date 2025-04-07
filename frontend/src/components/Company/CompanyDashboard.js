@@ -35,10 +35,11 @@ const CompanyDashboard = () => {
 
       try {
         const [jobRes, appRes, selRes] = await Promise.all([
-          fetch(`http://localhost:5000/api/counts/job-postings/${company.id}`, { headers }),
-          fetch(`http://localhost:5000/api/counts/applications/${company.id}`, { headers }),
-          fetch(`http://localhost:5000/api/counts/selected-candidates/${company.id}`, { headers }),
+          fetch(`${process.env.REACT_APP_API_BASE_URL}/api/counts/job-postings/${company.id}`, { headers }),
+          fetch(`${process.env.REACT_APP_API_BASE_URL}/api/counts/applications/${company.id}`, { headers }),
+          fetch(`${process.env.REACT_APP_API_BASE_URL}/api/counts/selected-candidates/${company.id}`, { headers }),
         ]);
+        
 
         const [jobData, appData, selData] = await Promise.all([
           jobRes.json(),

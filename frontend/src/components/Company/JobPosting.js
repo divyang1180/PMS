@@ -42,7 +42,7 @@ const JobPostings = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/jobs/post", {
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/jobs/post`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, companyId }),

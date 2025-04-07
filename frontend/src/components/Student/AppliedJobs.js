@@ -10,7 +10,7 @@ const AppliedJobs = () => {
     const fetchJobs = async () => {
       try {
         console.log("🔍 Fetching job listings...");
-        const response = await fetch("http://localhost:5000/api/jobs");
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/jobs`);
         if (!response.ok) throw new Error(`Server error: ${response.status}`);
 
         const data = await response.json();
@@ -31,7 +31,7 @@ const AppliedJobs = () => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
 
-      const response = await fetch("http://localhost:5000/api/apply", {
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/apply`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ studentId: user.id, jobId }),

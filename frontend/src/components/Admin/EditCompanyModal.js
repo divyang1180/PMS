@@ -17,7 +17,7 @@ const EditCompanyModal = ({ company, onClose, refresh }) => {
     try {
       console.log("Fetching jobs for companyId:", companyId);
       // ✅ Corrected route
-      const response = await axios.get(`http://localhost:5000/api/jobs/company/${companyId}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/jobs/company/${companyId}`);
       console.log("Jobs Data:", response.data);
       setJobs(response.data);
     } catch (error) {
@@ -34,13 +34,13 @@ const EditCompanyModal = ({ company, onClose, refresh }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/companies/${company.id}`, {
+      await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/companies/${company.id}`, {
         name,
         email,
       });
 
       for (const job of jobs) {
-        await axios.put(`http://localhost:5000/api/companies/job/${job.id}`, job);
+        await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/companies/job/${job.id}`, job);
 
       }
 

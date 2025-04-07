@@ -44,7 +44,7 @@ const CompanySignUp = () => {
 
     try {
       setLoading(true);
-      await axios.post("http://localhost:5000/api/company/signup/send-otp", {
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/company/signup/send-otp`, {
         email: formData.email,
       });
       alert("OTP sent to your email");
@@ -60,7 +60,7 @@ const CompanySignUp = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      await axios.post("http://localhost:5000/api/company/signup/signup", {
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/company/signup/signup`, {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,

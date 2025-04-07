@@ -13,7 +13,7 @@ const StudentsList = () => {
 
   const fetchStudents = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/students");
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/students`);
       if (!response.ok) throw new Error("Failed to fetch students");
       const data = await response.json();
       console.log("Fetched Students Data:", data); // ✅ Debugging line
@@ -77,7 +77,7 @@ const StudentsList = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/students/${editingStudent.id}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/students/${editingStudent.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

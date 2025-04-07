@@ -14,7 +14,7 @@ const CompaniesList = () => {
 
   const fetchCompanies = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/companies");
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/companies`);
       setCompanies(response.data);
     } catch (error) {
       console.error("Error fetching companies:", error);

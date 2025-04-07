@@ -67,7 +67,7 @@ const Profile = () => {
   const fetchStudentData = async (userId, token) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/student/${userId}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/student/${userId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -179,7 +179,7 @@ const Profile = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/student/create",
+        `${process.env.REACT_APP_API_BASE_URL}/api/student/create`,
         formDataToSend,
         {
           headers: { Authorization: `Bearer ${token}` },

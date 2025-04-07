@@ -14,7 +14,7 @@ const ForgotPassword = () => {
 
   const sendOtp = async () => {
     try {
-      await axios.post("http://localhost:5000/otp/send-otp", { email, role });
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/otp/send-otp`, { email, role });
       setStep(2);
     } catch (error) {
       alert("Error sending OTP");
@@ -23,7 +23,7 @@ const ForgotPassword = () => {
 
   const verifyOtp = async () => {
     try {
-      await axios.post("http://localhost:5000/otp/verify-otp", {
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/otp/verify-otp`, {
         email,
         otp,
         role,
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/otp/reset-password", {
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/otp/reset-password`, {
         email,
         newPassword,
         role,
